@@ -17,7 +17,8 @@
   },
   "permissions": {
     "http": {
-      "enable": true
+      "enable": true,
+      "domains": ["bot.dev"]
     },
     "reddit": {
       "asUser": ["SUBMIT_POST"]

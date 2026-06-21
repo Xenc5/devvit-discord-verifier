@@ -31,7 +31,9 @@ The bot backend receives this as a POST with header `X-Devvit-Verification-Secre
 The example `devvit.json` includes:
 
 ```json
+{
   "name": "devvit-discord",
+}
 ```
 
 Change this to the username of a Devvit app created by the developer in `devvit whoami`.
@@ -42,7 +44,18 @@ Change this to the username of a Devvit app created by the developer in `devvit 
 }
 ```
 
-Change this to a different test subreddit to avoid providing it each time in `devvit playtest <subreddit>`.
+Change this to a different test subreddit to avoid providing it each time in `npm run dev <subreddit>`.
+
+```json
+"permissions": {
+  "http": {
+    "enable": true,
+    "domains": ["bot.dev"]
+  }
+}
+```
+
+Change this to the the same host as the `verifyEndpoint` setting below. Devvit requests this domain to be allowlisted on playtest. It will be able to connect once approved by Reddit.
 
 Then, from this folder:
 
