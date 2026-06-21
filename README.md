@@ -1,5 +1,7 @@
 # Devvit Discord Verifier
 
+![Verification post on Reddit](./docs/verification-post.png)
+
 ## Verification Flow
 
 1. Discord bot gives user a short verification code.
