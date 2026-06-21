@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="verify.css" />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, height=device-height, user-scalable=0"
+    />
+    <title>Verification</title>
+  </head>
+  <body>
+    <main class="app" aria-label="Verification">
+      <section class="card">
+        <h1>Enter your code</h1>
+        <p class="intro">
+          Paste the code from Discord to link your Reddit account.
+        </p>
+
+        <form class="verify-form" id="verify-form">
+          <label class="label" for="code-input">Verification code</label>
+          <input
+            class="code-input"
+            id="code-input"
+            name="code"
+            type="text"
+            inputmode="text"
+            autocomplete="one-time-code"
+            autocapitalize="characters"
+            spellcheck="false"
+            placeholder="ABCD-1234"
+            required
+          />
+          <div class="status" id="status" data-kind="idle" role="status">
+            Paste your verification code.
+          </div>
+          <button class="submit-button" id="submit-button" type="submit">
+            Verify as <span id="username">u/redditor</span>
+          </button>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="verify.js" defer></script>
+  </body>
+</html>

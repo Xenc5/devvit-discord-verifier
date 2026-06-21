@@ -1,0 +1,62 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "name": "devvit-discord",
+  "post": {
+    "dir": "public",
+    "entrypoints": {
+      "default": {
+        "entry": "verify.html",
+        "height": "tall",
+        "inline": true
+      }
+    }
+  },
+  "server": {
+    "dir": "dist/server",
+    "entry": "index.js"
+  },
+  "permissions": {
+    "http": {
+      "enable": true
+    },
+    "reddit": {
+      "asUser": ["SUBMIT_POST"]
+    }
+  },
+  "settings": {
+    "subreddit": {
+      "verifyEndpoint": {
+        "type": "string",
+        "label": "Verification endpoint",
+        "helpText": "HTTPS endpoint to send verification payloads to.",
+        "placeholder": "https://bot.dev/reddit/verify"
+      },
+      "sharedSecret": {
+        "type": "string",
+        "label": "Shared secret",
+        "helpText": "Sent as X-Devvit-Verification-Secret to all endpoints."
+      }
+    }
+  },
+  "menu": {
+    "items": [
+      {
+        "label": "Create verification post",
+        "description": "Discord",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/create-post"
+      }
+    ]
+  },
+  "forms": {
+    "createVerificationPost": "/internal/form/create-post-submit"
+  },
+  "scripts": {
+    "dev": "node --experimental-strip-types ./tools/build.ts --watch",
+    "build": "node --experimental-strip-types ./tools/build.ts --minify"
+  },
+  "dev": {
+    "subreddit": "test_subreddit"
+  }
+}
